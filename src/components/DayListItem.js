@@ -33,4 +33,5 @@ export default function DayListItem(props) {
       <h3 className="text--light">{spots}</h3>
     </li>
   );
+  
 }
