@@ -8,7 +8,7 @@ export default function DayListItem(props) {
   // updates <li> class name based on prop that returns true or default if both equal false
   const dayListItemClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
-    "day-list__item--full": (props.spots === 0)
+    "day-list__item--full": !props.spots
   });
 
   // returns string based on value of spots
@@ -20,7 +20,7 @@ export default function DayListItem(props) {
     if (spots === 1) {
       return "1 spot remaining"
     }
-    
+
     return `${spots} spots remaining`;
   };
 
