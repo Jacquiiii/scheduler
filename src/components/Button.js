@@ -5,7 +5,7 @@ import "components/Button.scss";
 // renders button and applies styles/functionality based on props
 export default function Button(props) {
 
-  // updates class name to button + prop that returns true
+  // updates <button> class name based on prop that returns true or default if both equal false
   const buttonClass = classNames("button", {
     "button--confirm": props.confirm,
     "button--danger": props.danger
