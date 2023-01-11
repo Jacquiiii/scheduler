@@ -4,7 +4,7 @@ import InterviewerListItem from "components/InterviewerListItem";
 
 
 // renders a list of InterviewerListItem components
-export default function InterviewerList(props) {
+const InterviewerList = (props) => {
 
   const interviewerListItems = props.interviewers.map(interviewer => {
 
@@ -28,3 +28,6 @@ export default function InterviewerList(props) {
   );
 
 };
+
+
+export default InterviewerList;

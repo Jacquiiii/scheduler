@@ -2,9 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import "components/Button.scss";
 
-
 // renders a button and applies styles/functionality based on props
-export default function Button(props) {
+const Button = (props) => {
 
   // updates class name based on whether prop is true or false
   const buttonClass = classNames("button", {
@@ -22,4 +21,6 @@ export default function Button(props) {
     </button>
   );
   
-}
+};
+
+export default Button;

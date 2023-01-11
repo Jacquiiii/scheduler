@@ -1,7 +1,6 @@
 import React from "react";
 
-
-export default function Error(props) {
+const Error = (props) => {
 
   return (
     <main className="appointment__card appointment__card--error">
@@ -18,4 +17,6 @@ export default function Error(props) {
     </main>
   );
 
-}
+};
+
+export default Error;

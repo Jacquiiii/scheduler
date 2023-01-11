@@ -2,9 +2,8 @@ import React from "react";
 import classNames from "classnames";
 import "components/InterviewerListItem.scss";
 
-
 // renders an interviewer and applies styles/functionality based on props
-export default function InterviewerListItem(props) {
+const InterviewerListItem = (props) => {
 
   // updates class name based on whether prop is true or false
   const interviewerClass = classNames("interviewers__item", {
@@ -22,4 +21,6 @@ export default function InterviewerListItem(props) {
     </li>
   );
   
-}
+};
+
+export default InterviewerListItem;

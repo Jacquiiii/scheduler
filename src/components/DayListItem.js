@@ -4,7 +4,7 @@ import "components/DayListItem.scss";
 
 
 // renders day and interview spots available
-export default function DayListItem(props) {
+const DayListItem = (props) => {
 
   // updates class name based on whether prop is true or false
   const dayClass = classNames("day-list__item", {
@@ -21,7 +21,7 @@ export default function DayListItem(props) {
     if (spots === 1) {
       return "1 spot remaining"
     }
-
+    
     return `${spots} spots remaining`;
   };
 
@@ -35,4 +35,7 @@ export default function DayListItem(props) {
     </li>
   );
   
-}
+};
+
+
+export default DayListItem;

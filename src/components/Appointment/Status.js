@@ -1,7 +1,6 @@
 import React from "react";
 
-
-export default function Status(props) {
+const Status = (props) => {
 
   return (
     <main className="appointment__card appointment__card--status">
@@ -14,4 +13,6 @@ export default function Status(props) {
     </main>
   );
 
-}
+};
+
+export default Status;
