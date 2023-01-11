@@ -2,10 +2,11 @@ import React from "react";
 import classNames from "classnames";
 import "components/DayListItem.scss";
 
-// renders day and interview spots available based on props
+
+// renders day and interview spots available
 export default function DayListItem(props) {
 
-  // updates <li> class name based on prop that returns true or default if both equal false
+  // updates class name based on whether prop is true or false
   const dayListItemClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": !props.spots
