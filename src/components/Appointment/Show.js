@@ -16,6 +16,7 @@ const Show = (props) => {
           <img
             className="appointment__actions-button"
             src="images/edit.png"
+            alt="Edit"
             onClick={props.onEdit}
           />
           <img
