@@ -3,7 +3,7 @@ import classNames from "classnames";
 import "components/DayListItem.scss";
 
 
-// renders day and interview spots available
+// displays day and interview spots available
 const DayListItem = (props) => {
 
   // updates class name based on whether prop is true or false

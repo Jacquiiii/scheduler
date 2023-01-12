@@ -1,5 +1,6 @@
 import React from "react";
 
+// informs the user that an operation is in progress
 const Status = (props) => {
 
   return (

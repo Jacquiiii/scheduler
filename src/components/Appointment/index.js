@@ -6,11 +6,12 @@ import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
 
 
+// displays appointment - renders Show component if appointment exists and Empty component if it does not exist
 const Appointment = (props) => {
 
+  // if appointment exists, sets variables used as props in the Show component
   let student;
   let interviewer;
-
   if (props.interview) {
     student = props.interview.student;
     interviewer = props.interview.interviewer.name;

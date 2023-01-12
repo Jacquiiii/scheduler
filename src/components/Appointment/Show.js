@@ -1,5 +1,6 @@
 import React from "react";
 
+// allows a user to see an existing appointmen
 const Show = (props) => {
 
   return (

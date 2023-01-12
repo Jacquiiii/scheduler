@@ -1,5 +1,6 @@
 import React from "react";
 
+// informs the user when an error occurs
 const Error = (props) => {
 
   return (

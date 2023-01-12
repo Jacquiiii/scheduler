@@ -63,19 +63,19 @@ const appointments = {
 };
 
 
+// single page app content
 const Application = (props) => {
 
   const [day, setDay] = useState("Monday");
 
+  // produces list of Appointment components to be displayed on the page
   const appointmentList = Object.values(appointments).map(appointment => {
-
     return (
       <Appointment
         key={ appointment.id }
         { ...appointment }
       />
     );
-
   }) 
 
   return (

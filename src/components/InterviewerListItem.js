@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import "components/InterviewerListItem.scss";
 
-// renders an interviewer and applies styles/functionality based on props
+// displays an interviewer and applies styles/functionality based on props
 const InterviewerListItem = (props) => {
 
   // updates class name based on whether prop is true or false

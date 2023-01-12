@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import "components/Button.scss";
 
-// renders a button and applies styles/functionality based on props
+// button that applies styles/functionality based on props
 const Button = (props) => {
 
   // updates class name based on whether prop is true or false

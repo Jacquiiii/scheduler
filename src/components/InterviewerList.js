@@ -3,7 +3,7 @@ import "components/InterviewerList.scss";
 import InterviewerListItem from "components/InterviewerListItem";
 
 
-// renders a list of InterviewerListItem components
+// displays a list of InterviewerListItem components
 const InterviewerList = (props) => {
 
   const interviewerListItems = props.interviewers.map(interviewer => {
