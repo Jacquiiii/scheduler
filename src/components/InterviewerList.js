@@ -10,11 +10,11 @@ const InterviewerList = (props) => {
 
     return (
       <InterviewerListItem
-        key={interviewer.id}
-        name={interviewer.name}
-        avatar={interviewer.avatar}
-        selected={interviewer.id === props.value}
-        setInterviewer={() => props.onChange(interviewer.id)}
+        key={ interviewer.id }
+        name={ interviewer.name }
+        avatar={ interviewer.avatar }
+        selected={ interviewer.id === props.value }
+        setInterviewer={ () => props.onChange(interviewer.id) }
       />
     );
 
@@ -23,7 +23,7 @@ const InterviewerList = (props) => {
   return (
     <section className="interviewers">
       <h4 className="interviewers__header text--light">Interviewer</h4>
-      <ul className="interviewers__list">{interviewerListItems}</ul>
+      <ul className="interviewers__list">{ interviewerListItems }</ul>
     </section>
   );
 
