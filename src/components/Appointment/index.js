@@ -22,13 +22,9 @@ const Appointment = (props) => {
       <Header time={ props.time }/>
       <Fragment>
         { props.interview ? 
-          <>
-            <Show student={ student } interviewer={ interviewer }/>
-          </> 
+          <><Show student={ student } interviewer={ interviewer } /></> 
           : 
-          <>
-            <Empty />
-          </> 
+          <><Empty /></> 
         }
       </Fragment>
     </article>
