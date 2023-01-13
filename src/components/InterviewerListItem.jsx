@@ -1,5 +1,6 @@
 import React from "react";
 import classNames from "classnames";
+
 import "components/InterviewerListItem.scss";
 
 // displays an interviewer and applies styles/functionality based on props

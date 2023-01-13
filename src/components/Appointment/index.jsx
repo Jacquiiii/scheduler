@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
-import "components/Appointment/styles.scss";
 
 import Header from "components/Appointment/Header";
 import Show from "components/Appointment/Show";
 import Empty from "components/Appointment/Empty";
+
+import "components/Appointment/styles.scss";
 
 
 // displays appointment - renders Show component if appointment exists and Empty component if it does not exist
