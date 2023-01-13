@@ -19,7 +19,7 @@ const getAppointmentsForDay = (state, day) => {
 };
 
 
-// returns an interview containing interviewer details
+// if interviewer id matches an interviewer in state, returns an interview object that contains a student (string) and an interviewer (object)
 const getInterview = (state, interview) => {
 
   // if interview is not found, return null
@@ -27,15 +27,14 @@ const getInterview = (state, interview) => {
     return null;
   }
 
+  // returns id matching interviewer
   const id = interview.interviewer;
 
-  // if id is a match returns interview object with interviewer details
-  if (state.interviewers[id]) {
-    return {
-      student: interview.student,
-      interviewer: state.interviewers[id]
-    };
-  }
+  // returns new object with interviewer details
+  return {
+    ...interview,
+    interviewer: state.interviewers[id]
+  };
 
 };
 
