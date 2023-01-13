@@ -1,4 +1,5 @@
-export default function getAppointmentsForDay (state, day) {
+// takes in state and a day and returns an array of appointment details for the given day
+const getAppointmentsForDay = (state, day) => {
 
   // returns object matching day
   const filteredDay = state.days.find(d => d.name === day);
@@ -14,3 +15,5 @@ export default function getAppointmentsForDay (state, day) {
   return appointmentsList;
 
 }
+
+export default getAppointmentsForDay;
