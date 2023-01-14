@@ -34,7 +34,7 @@ const Appointment = (props) => {
           <Form
             student={ "" }
             interviewer={ null }
-            interviewers={ [] }
+            interviewers={ props.interviewers }
             onCancel={ back }
           />
         )}
