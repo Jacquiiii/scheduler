@@ -1,9 +1,10 @@
 import React from "react";
 
-import "components/InterviewerList.scss";
 import InterviewerListItem from "components/InterviewerListItem";
 
-// displays a list of InterviewerListItem components
+import "components/InterviewerList.scss";
+
+// Displays a list of InterviewerListItem components
 const InterviewerList = (props) => {
 
   const interviewerListItems = props.interviewers.map(interviewer => {

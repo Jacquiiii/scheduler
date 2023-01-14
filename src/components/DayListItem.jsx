@@ -3,16 +3,16 @@ import classNames from "classnames";
 
 import "components/DayListItem.scss";
 
-// displays day and interview spots available
+// Displays day and interview spots available
 const DayListItem = (props) => {
 
-  // updates class name based on whether prop is true or false
+  // Updates class name based on whether prop is true or false
   const dayClass = classNames("day-list__item", {
     "day-list__item--selected": props.selected,
     "day-list__item--full": !props.spots
   });
 
-  // returns string based on value of spots
+  // Returns string based on value of spots
   const formatSpots = (spots) => {
     if (spots === 0) {
       return "no spots remaining"
@@ -24,7 +24,7 @@ const DayListItem = (props) => {
     return `${spots} spots remaining`;
   };
 
-  // assigns result of the formatted value of props.spots
+  // Assigns result of the formatted value of props.spots
   const spots = formatSpots(props.spots);
 
   return (

@@ -3,19 +3,19 @@ import React, { useState } from 'react';
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
-// allows user to create or edit an appointment and cancel or save the changes
+// Allows user to create or edit an appointment and cancel or save the changes
 const Form = (props) => {
   
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
-  // resets form fields
+  // Resets form fields
   const reset = () => {
     setStudent("");
     setInterviewer(null);
   };
 
-  // uses reset to reset form fields and submits cancel
+  // Uses reset to reset form fields and submits cancel
   const cancel = () => {
     reset();
     props.onCancel();

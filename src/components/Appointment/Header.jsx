@@ -1,6 +1,6 @@
 import React from "react";
 
-// displays the time for the appointment
+// Displays the time for the appointment
 const Header = (props) => {
   return (
     <header className="appointment__time">

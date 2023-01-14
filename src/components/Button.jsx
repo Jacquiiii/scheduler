@@ -3,10 +3,10 @@ import classNames from "classnames";
 
 import "components/Button.scss";
 
-// button that applies styles/functionality based on props
+// Button that applies styles/functionality based on props
 const Button = (props) => {
 
-  // updates class name based on whether prop is true or false
+  // Updates class name based on whether prop is true or false
   const buttonClass = classNames("button", {
     "button--confirm": props.confirm,
     "button--danger": props.danger

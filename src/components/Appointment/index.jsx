@@ -1,4 +1,5 @@
 import React from "react";
+
 import useVisualMode from "hooks/useVisualMode";
 
 import Header from "components/Appointment/Header";
@@ -8,7 +9,7 @@ import Form from "components/Appointment/Form";
 
 import "components/Appointment/styles.scss";
 
-// displays appointments and renders component based on current mode
+// Displays appointments and renders component based on current mode
 const Appointment = (props) => {
 
   const EMPTY = "EMPTY";

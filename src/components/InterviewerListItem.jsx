@@ -3,10 +3,10 @@ import classNames from "classnames";
 
 import "components/InterviewerListItem.scss";
 
-// displays an interviewer and applies styles/functionality based on props
+// Displays an interviewer and applies styles/functionality based on props
 const InterviewerListItem = (props) => {
 
-  // updates class name based on whether prop is true or false
+  // Updates class name based on whether prop is true or false
   const interviewerClass = classNames("interviewers__item", {
     "interviewers__item--selected": props.selected
   });

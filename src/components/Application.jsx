@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios';
 
-import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "components/Appointment";
 
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
-// single page app content
+import "components/Application.scss";
+
+// Single page app content
 const Application = (props) => {
 
   const [state, setState] = useState({
@@ -17,10 +18,10 @@ const Application = (props) => {
     interviewers: {}
   });
 
-  // updates state with a new day
+  // Updates state with a new day
   const setDay = day => setState({ ...state, day });
 
-  // gets days and appointments data from API and updates state with new days array and appointments object
+  // Gets days and appointments data from API and updates state with new days array and appointments object
   useEffect(() => {
 
     Promise.all([
@@ -39,7 +40,7 @@ const Application = (props) => {
 
   }, [])
 
-  // produces list of Appointment components to be displayed on the page
+  // Produces list of Appointment components to be displayed on the page
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointmentList = dailyAppointments.map(appointment => {
 

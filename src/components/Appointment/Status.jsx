@@ -1,6 +1,6 @@
 import React from "react";
 
-// informs the user that an operation is in progress
+// Informs the user that an operation is in progress
 const Status = (props) => {
   return (
     <main className="appointment__card appointment__card--status">

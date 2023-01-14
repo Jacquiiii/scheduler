@@ -1,6 +1,6 @@
 import React from "react";
 
-// informs the user when an error occurs
+// Informs user when an error occurs
 const Error = (props) => {
   return (
     <main className="appointment__card appointment__card--error">
