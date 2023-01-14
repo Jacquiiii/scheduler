@@ -3,10 +3,9 @@ import React, { useState } from 'react';
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
 
-
 // allows user to create or edit an appointment and cancel or save the changes
 const Form = (props) => {
-
+  
   const [student, setStudent] = useState(props.student || "");
   const [interviewer, setInterviewer] = useState(props.interviewer || null);
 
@@ -51,6 +50,5 @@ const Form = (props) => {
   );
 
 };
-
 
 export default Form;

@@ -7,7 +7,6 @@ import Appointment from "components/Appointment";
 
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
-
 // single page app content
 const Application = (props) => {
 
@@ -28,8 +27,8 @@ const Application = (props) => {
       axios.get('/api/days'),
       axios.get('/api/appointments'),
       axios.get('/api/interviewers')
-    ]).then((all) => {
-
+    ])
+    .then((all) => {
       setState(prev => ({
         ...prev,
         days: all[0].data,
@@ -43,7 +42,7 @@ const Application = (props) => {
   // produces list of Appointment components to be displayed on the page
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointmentList = dailyAppointments.map(appointment => {
-  
+
     const interview = getInterview(state, appointment.interview);
     const interviewers = getInterviewersForDay(state, state.day);
 
@@ -88,6 +87,5 @@ const Application = (props) => {
   );
 
 };
-
 
 export default Application;

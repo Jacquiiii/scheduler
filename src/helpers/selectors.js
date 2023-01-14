@@ -1,30 +1,21 @@
-// returns an array of appointments for a specified day
+// returns an array of appointments for a specified day. if day is not found, return empty array.
 const getAppointmentsForDay = (state, day) => {
-  // returns object matching day
-  const filteredDay = state.days.find(d => d.name === day);
+  const filteredDayObject = state.days.find(d => d.name === day);
 
-  // if day is not found, return empty object
-  if (!filteredDay) {
-    return [];
-  };
+  if (!filteredDayObject) return [];
 
-  // returns array of appointment ids for day
-  const appointmentIds = filteredDay.appointments;
+  const appointmentIdsArray = filteredDayObject.appointments;
 
-  // returns a new array where each appointmentId is replaced with it's corresponding appointment details
-  const appointmentsList = appointmentIds.map(id => state.appointments[id]);
+  // produces array where each appointmentId is replaced with it's corresponding appointment details
+  const appointmentsList = appointmentIdsArray.map(id => state.appointments[id]);
+
   return appointmentsList;
 };
 
-
-// if interviewer id matches an interviewer in state, returns an interview object that contains a student (string) and an interviewer (object)
+// if interviewer id matches an interviewer in state, returns an interview object that contains a student (string) and an interviewer (object). if interview is not found, return null.
 const getInterview = (state, interview) => {
-  // if interview is not found, return null
-  if (!interview) {
-    return null;
-  };
+  if (!interview) return null;
 
-  // returns id matching interviewer
   const id = interview.interviewer;
 
   // returns new object with interviewer details
@@ -34,24 +25,18 @@ const getInterview = (state, interview) => {
   };
 };
 
-
-// returns an array of interviewers for a specified day
+// returns an array of interviewers for a specified day. if day is not found, return empty array.
 const getInterviewersForDay = (state, day) => {
-  // returns object matching day
-  const filteredDay = state.days.find(d => d.name === day);
+  const filteredDayObject = state.days.find(d => d.name === day);
 
-  // if day is not found, return empty object
-  if (!filteredDay) {
-    return [];
-  };
+  if (!filteredDayObject) return [];
 
-  // returns array of interviewer ids for day
-  const interviewerIds = filteredDay.interviewers;
+  const interviewerIdsArray = filteredDayObject.interviewers;
 
-  // returns a new array where each interviewerId is replaced with it's corresponding interviewer details
-  const interviewersList = interviewerIds.map(id => state.interviewers[id]);
+  // produces array where each interviewerId is replaced with it's corresponding interviewer details
+  const interviewersList = interviewerIdsArray.map(id => state.interviewers[id]);
+
   return interviewersList;
 };
-
 
 export { getAppointmentsForDay, getInterview, getInterviewersForDay };

@@ -3,7 +3,6 @@ import Button from "components/Button";
 
 // allows a user to confirm a destructive action
 const Confirm = (props) => {
-
   return (
     <main className="appointment__card appointment__card--confirm">
       <h1 className="text--semi-bold">{ props.message }</h1>
@@ -13,7 +12,6 @@ const Confirm = (props) => {
       </section>
     </main>
   );
-
 };
 
 export default Confirm;

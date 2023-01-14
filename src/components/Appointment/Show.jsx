@@ -2,7 +2,6 @@ import React from "react";
 
 // allows a user to see an existing appointmen
 const Show = (props) => {
-
   return (
     <main className="appointment__card appointment__card--show">
       <section className="appointment__card-left">
@@ -30,7 +29,6 @@ const Show = (props) => {
       </section>
     </main>
   );
-
 };
 
 export default Show;

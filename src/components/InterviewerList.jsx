@@ -3,12 +3,10 @@ import React from "react";
 import "components/InterviewerList.scss";
 import InterviewerListItem from "components/InterviewerListItem";
 
-
 // displays a list of InterviewerListItem components
 const InterviewerList = (props) => {
 
   const interviewerListItems = props.interviewers.map(interviewer => {
-
     return (
       <InterviewerListItem
         key={ interviewer.id }
@@ -18,7 +16,6 @@ const InterviewerList = (props) => {
         setInterviewer={ () => props.onChange(interviewer.id) }
       />
     );
-
   });
 
   return (
@@ -29,6 +26,5 @@ const InterviewerList = (props) => {
   );
 
 };
-
 
 export default InterviewerList;

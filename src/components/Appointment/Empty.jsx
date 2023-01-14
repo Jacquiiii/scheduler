@@ -2,7 +2,6 @@ import React from "react";
 
 // allows a user to choose which time slot to book
 const Empty = (props) => {
-
   return (
     <main className="appointment__add">
       <img
@@ -13,7 +12,6 @@ const Empty = (props) => {
       />
     </main>
   );
-
 };
 
 export default Empty;

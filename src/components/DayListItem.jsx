@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 import "components/DayListItem.scss";
 
-
 // displays day and interview spots available
 const DayListItem = (props) => {
 
@@ -15,7 +14,6 @@ const DayListItem = (props) => {
 
   // returns string based on value of spots
   const formatSpots = (spots) => {
-
     if (spots === 0) {
       return "no spots remaining"
     }
@@ -37,6 +35,5 @@ const DayListItem = (props) => {
   );
   
 };
-
 
 export default DayListItem;

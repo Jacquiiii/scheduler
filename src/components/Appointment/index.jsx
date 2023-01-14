@@ -8,7 +8,6 @@ import Form from "components/Appointment/Form";
 
 import "components/Appointment/styles.scss";
 
-
 // displays appointments and renders component based on current mode
 const Appointment = (props) => {
 
@@ -42,6 +41,5 @@ const Appointment = (props) => {
   );
   
 };
-
 
 export default Appointment;

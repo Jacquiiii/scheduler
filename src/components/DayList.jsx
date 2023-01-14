@@ -5,7 +5,6 @@ import DayListItem from "components/DayListItem";
 const DayList = (props) => {
 
   const dayListItems = props.days.map(day => {
-
     return (
       <DayListItem 
       key={ day.id }
@@ -15,7 +14,6 @@ const DayList = (props) => {
       setDay={ props.onChange } 
       />
     );
-
   });
 
   return (

@@ -21,7 +21,6 @@ import Form from "components/Appointment/Form";
 
 import "index.scss";
 
-
 const days = [
   {
     id: 1,
@@ -40,13 +39,11 @@ const days = [
   },
 ];
 
-
 const interviewer = {
   id: 1,
   name: "Sylvia Palmer",
   avatar: "https://i.imgur.com/LpaY82x.png"
 };
-
 
 const interviewers = [
   { id: 1, name: "Sylvia Palmer", avatar: "https://i.imgur.com/LpaY82x.png" },
@@ -55,7 +52,6 @@ const interviewers = [
   { id: 4, name: "Cohana Roy", avatar: "https://i.imgur.com/FK8V841.jpg" },
   { id: 5, name: "Sven Jones", avatar: "https://i.imgur.com/twYrpay.jpg" }
 ];
-
 
 storiesOf("Button", module)
   .addParameters({
@@ -73,7 +69,6 @@ storiesOf("Button", module)
     </Button>
   ));
 
-
 storiesOf("DayListItem", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -84,7 +79,6 @@ storiesOf("DayListItem", module)
   .add("Clickable", () => (
     <DayListItem name="Tuesday" setDay={action("setDay")} spots={5} />
   ));
-
 
 storiesOf("DayList", module)
   .addParameters({
@@ -99,7 +93,6 @@ storiesOf("DayList", module)
   .add("Wednesday", () => (
     <DayList days={days} value={"Wednesday"} onChange={action("setDay")} />
   ));
-
 
 storiesOf("InterviewerListItem", module)
   .addParameters({
@@ -128,7 +121,6 @@ storiesOf("InterviewerListItem", module)
     />
   ));
 
-
 storiesOf("InterviewerList", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -150,7 +142,6 @@ storiesOf("InterviewerList", module)
       onChange={action("setInterviewer")}
     />
   ));
-
 
 storiesOf("Appointment", module)
   .addParameters({
