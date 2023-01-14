@@ -1,6 +1,6 @@
 import React from "react";
 
-// Allows a user to see an existing appointmen
+// Allows a user to see an existing appointment
 const Show = (props) => {
   return (
     <main className="appointment__card appointment__card--show">
