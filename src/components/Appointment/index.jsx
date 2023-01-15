@@ -9,7 +9,7 @@ import Form from "components/Appointment/Form";
 
 import "components/Appointment/styles.scss";
 
-// Displays appointments and renders component based on current mode
+// Displays appointment component based on current mode
 const Appointment = (props) => {
 
   const EMPTY = "EMPTY";

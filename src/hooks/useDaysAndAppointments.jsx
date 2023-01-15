@@ -5,7 +5,7 @@ import Appointment from "components/Appointment";
 
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
-// Used in Application component to render appointments list and set day based on state for days list
+// Used in Application component for DayList props and to display appointments list
 const useDaysAndAppointments = () => {
 
   const [state, setState] = useState({
@@ -37,7 +37,7 @@ const useDaysAndAppointments = () => {
 
   }, [])
 
-  // Produces list of Appointment components to be displayed on the page
+  // Produces list of Appointment components
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointments = dailyAppointments.map(appointment => {
 

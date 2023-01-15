@@ -1,6 +1,6 @@
 import React from "react";
 
-// Allows a user to choose which time slot to book
+// Displays when appointment does not exist and allows user to select appointment slot to start booking
 const Empty = (props) => {
   return (
     <main className="appointment__add">
