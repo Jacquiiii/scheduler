@@ -63,6 +63,30 @@ const Application = (props) => {
       .catch(err => console.log(err));
   };
 
+  // Changes local state when interview is cancelled and updates API
+  const cancelInterview = (id) => {
+    const interview = null;
+
+    const appointment = {
+      ...state.appointments[id],
+      interview
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    return axios.delete(`/api/appointments/${id}`, { interview })
+      .then(response => {
+        setState(prev => ({
+          ...prev,
+          appointments
+        }));
+      })
+      .catch(err => console.log(err));
+  };
+
   // Produces list of Appointment components to be displayed on the page
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const appointmentList = dailyAppointments.map(appointment => {
@@ -77,6 +101,7 @@ const Application = (props) => {
         interview={ interview }
         interviewers={ interviewers }
         bookInterview= { bookInterview }
+        cancelInterview= { cancelInterview }
       />
     );
 
