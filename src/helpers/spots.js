@@ -1,4 +1,4 @@
-// Returns appropriate string based on value of spots
+// Returns appropriate string based on value of spots. Used in DayListItem component.
 const spots = (spots) => {
   if (spots === 0) {
     return "no spots remaining"
