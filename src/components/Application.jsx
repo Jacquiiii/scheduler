@@ -25,20 +25,43 @@ const Application = (props) => {
   useEffect(() => {
 
     Promise.all([
-      axios.get('/api/days'),
-      axios.get('/api/appointments'),
-      axios.get('/api/interviewers')
+      axios.get("/api/days"),
+      axios.get("/api/appointments"),
+      axios.get("/api/interviewers")
     ])
-    .then((all) => {
-      setState(prev => ({
-        ...prev,
-        days: all[0].data,
-        appointments: all[1].data,
-        interviewers: all[2].data
-      }));
-    });
+      .then((all) => {
+        setState(prev => ({
+          ...prev,
+          days: all[0].data,
+          appointments: all[1].data,
+          interviewers: all[2].data
+        }));
+      })
+      .catch(err => console.log(err));
 
-  }, [])
+  }, []);
+
+  // Changes local state when interview is booked and updates API
+  const bookInterview = (id, interview) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    return axios.put(`/api/appointments/${id}`, { interview })
+      .then(response => {
+        setState(prev => ({
+          ...prev,
+          appointments
+        }));
+      })
+      .catch(err => console.log(err));
+  };
 
   // Produces list of Appointment components to be displayed on the page
   const dailyAppointments = getAppointmentsForDay(state, state.day);
@@ -53,6 +76,7 @@ const Application = (props) => {
         { ...appointment }
         interview={ interview }
         interviewers={ interviewers }
+        bookInterview= { bookInterview }
       />
     );
 

@@ -20,6 +20,18 @@ const Appointment = (props) => {
     props.interview ? SHOW : EMPTY
   );
 
+  // Transitions to show mode after user enters name/selects interviewer and clicks save
+  const save = (name, interviewer) => {
+    const interview = {
+      student: name,
+      interviewer
+    };
+  
+    props.bookInterview(props.id, interview)
+      .then(res => transition(SHOW))
+      .catch(err => console.log(err));
+  };
+
   return (
     <article className="appointment">
       <Header time={ props.time }/>
@@ -36,6 +48,7 @@ const Appointment = (props) => {
             interviewer={ null }
             interviewers={ props.interviewers }
             onCancel={ back }
+            onSave={ save }
           />
         )}
     </article>
