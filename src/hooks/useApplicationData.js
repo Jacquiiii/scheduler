@@ -59,6 +59,7 @@ const useApplicationData = () => {
 
   // Changes local state when interview is booked and updates API
   const bookInterview = (id, interview) => {
+
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
