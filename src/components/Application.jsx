@@ -35,7 +35,6 @@ const Application = (props) => {
         cancelInterview= { cancelInterview }
       />
     );
-
   });
 
   return (

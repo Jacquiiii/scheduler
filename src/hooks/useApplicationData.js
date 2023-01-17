@@ -22,7 +22,7 @@ const useApplicationData = () => {
       axios.get("/api/appointments"),
       axios.get("/api/interviewers")
     ])
-      .then((all) => {
+      .then(all => {
         setState(prev => ({
           ...prev,
           days: all[0].data,
@@ -33,6 +33,29 @@ const useApplicationData = () => {
       .catch(err => console.log(err));
 
   }, []);
+
+  // Returns a new days array where spots are increased or decreased based on whether addDay is true (appointment deleted) or false (appointment added)
+  const updateSpots = function(state, appointments, id, addDay = false) {
+    const updatedDays = [];
+  
+    for (const day of state.days) {
+      if (day.appointments.includes(id)) {
+        let updatedSpots = day.spots;
+        addDay ? (updatedSpots += 1) : (updatedSpots -= 1);
+  
+        const updatedDay = {
+          ...day,
+          spots: updatedSpots
+        };
+  
+        updatedDays.push(updatedDay);
+
+      } else {
+        updatedDays.push(day);
+      }
+    } 
+    return updatedDays;
+  };
 
   // Changes local state when interview is booked and updates API
   const bookInterview = (id, interview) => {
@@ -46,11 +69,14 @@ const useApplicationData = () => {
       [id]: appointment
     };
 
+    const days = updateSpots(state, appointments, id);
+
     return new Promise((resolve, reject) => {
       axios.put(`/api/appointments/${id}`, { interview })
       .then(res => {
         setState(prev => ({
           ...prev,
+          days,
           appointments
         }));
         resolve(res);
@@ -73,11 +99,14 @@ const useApplicationData = () => {
       [id]: appointment
     };
 
+    const days = updateSpots(state, appointments, id, true);
+
     return new Promise((resolve, reject) => {
       axios.delete(`/api/appointments/${id}`, { interview })
       .then(res => {
         setState(prev => ({
           ...prev,
+          days,
           appointments
         }));
         resolve(res);
