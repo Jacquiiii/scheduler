@@ -24,7 +24,7 @@ const Appointment = (props) => {
   const EDIT = "EDIT";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
-  const ERROR_INFO = "ERROR_INFO";
+  // const ERROR_INFO = "ERROR_INFO";
 
 
   const { mode, transition, back } = useVisualMode(
@@ -34,9 +34,9 @@ const Appointment = (props) => {
   // Transitions to show mode after user enters name/selects interviewer and clicks save
   const save = (name, interviewer) => {
 
-    if (!name || !interviewer) {
-      return transition(ERROR_INFO);
-    };
+    // if (!name || !interviewer) {
+    //   return transition(ERROR_INFO);
+    // };
 
     const interview = {
       student: name,
@@ -110,12 +110,12 @@ const Appointment = (props) => {
             onClose={ () => transition(SHOW) }
           />
         )}
-        {mode === ERROR_INFO && (
+        {/* {mode === ERROR_INFO && (
           <Error 
             message="Please enter your name and select your interviewer."
             onClose={ () => back() }
           />
-        )}
+        )} */}
     </article>
   );
   

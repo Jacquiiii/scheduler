@@ -9,7 +9,7 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 import "components/Application.scss";
 
 // Single page app content
-const Application = (props) => {
+const Application = () => {
 
   const {
     state,
