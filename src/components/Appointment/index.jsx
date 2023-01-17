@@ -93,13 +93,13 @@ const Appointment = (props) => {
         )}
         {mode === ERROR_SAVE && (
           <Error 
-            message="Could not confirm appointment."
+            message="Could not confirm appointment"
             onClose={ () => back() }
           />
         )}
         {mode === ERROR_DELETE && (
           <Error 
-            message="Could not cancel appointment."
+            message="Could not cancel appointment"
             onClose={ () => transition(SHOW) }
           />
         )}
