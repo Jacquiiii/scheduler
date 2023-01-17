@@ -53,14 +53,17 @@ const Application = (props) => {
       [id]: appointment
     };
 
-    return axios.put(`/api/appointments/${id}`, { interview })
-      .then(response => {
+    return new Promise((resolve, reject) => {
+      axios.put(`/api/appointments/${id}`, { interview })
+      .then(res => {
         setState(prev => ({
           ...prev,
           appointments
         }));
+        resolve(res);
       })
-      .catch(err => console.log(err));
+      .catch(err => reject(err));
+    });
   };
 
   // Changes local state when interview is cancelled and updates API
@@ -77,14 +80,17 @@ const Application = (props) => {
       [id]: appointment
     };
 
-    return axios.delete(`/api/appointments/${id}`, { interview })
-      .then(response => {
+    return new Promise((resolve, reject) => {
+      axios.delete(`/api/appointments/${id}`, { interview })
+      .then(res => {
         setState(prev => ({
           ...prev,
           appointments
         }));
+        resolve(res);
       })
-      .catch(err => console.log(err));
+      .catch(err => reject(err));
+    })
   };
 
   // Produces list of Appointment components to be displayed on the page
