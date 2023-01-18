@@ -37,17 +37,17 @@ const useApplicationData = () => {
   // Returns a new days array where spots are updated for a specific day
   const updateSpots = (state, appointments) => {
     // Finds the day
-    const day = state.days.find(d => d.name === state.day);
+    const currentDay = state.days.find(d => d.name === state.day);
   
     // Counts the null appointments
     let spots = 0;
-    for (const id of day.appointments) {
+    for (const id of currentDay.appointments) {
       const appointment = appointments[id];
       if (!appointment.interview) spots++;
     }
   
     // Returns days array with updated day
-    const updatedDay = {...day, spots};
+    const updatedDay = {...currentDay, spots};
     return state.days.map(d => d.name === state.day ? updatedDay : d);
   };
 
