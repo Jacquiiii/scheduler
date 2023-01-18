@@ -93,7 +93,7 @@ const Appointment = (props) => {
       )}
       {mode === ERROR_SAVE && (
         <Error 
-          message="Could not confirm appointment"
+          message="Could not confirm changes"
           onClose={ () => back() }
         />
       )}

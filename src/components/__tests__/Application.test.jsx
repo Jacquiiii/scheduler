@@ -167,7 +167,7 @@ describe("Application", () => {
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
   
     // 8. Check that the element with the text "Could not confirm appointment" is displayed.
-    await waitForElement(() => getByText(appointment, "Could not confirm appointment"));
+    await waitForElement(() => getByText(appointment, "Could not confirm changes"));
 
     // 9. Click the close button to close the error.
     fireEvent.click(getByAltText(appointment, "Close"));
