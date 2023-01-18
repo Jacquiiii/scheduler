@@ -1,7 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 
-import spots from "helpers/spots";
+import { spots } from "helpers/helpers";
 
 import "components/DayListItem.scss";
 

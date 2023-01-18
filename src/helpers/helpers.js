@@ -10,4 +10,4 @@ const spots = (spots) => {
   return `${spots} spots remaining`;
 };
 
-export default spots;
+export { spots };
