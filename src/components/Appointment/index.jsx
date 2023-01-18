@@ -100,7 +100,7 @@ const Appointment = (props) => {
       {mode === ERROR_DELETE && (
         <Error 
           message="Could not cancel appointment"
-          onClose={ () => transition(SHOW) }
+          onClose={ () => back() }
         />
       )}
     </article>

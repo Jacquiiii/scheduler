@@ -11,8 +11,7 @@ import {
   getByPlaceholderText,
   getAllByTestId,
   queryByAltText,
-  queryByText,
-  prettyDOM
+  queryByText
 } from "@testing-library/react";
 
 import Application from "components/Application";
@@ -22,9 +21,16 @@ afterEach(cleanup);
 describe("Application", () => {
 
   it("changes the schedule when a new day is selected", async () => {
+    // 1. Render the Application.
     const { getByText } = render(<Application />);
+
+    // 2. Wait until the text "Monday" is displayed.
     await waitForElement(() => getByText("Monday"));
+
+    // 3. Click "Tuesday" to display appointments for Tuesday.
     fireEvent.click(getByText("Tuesday"));
+
+    // 4. Check that the element with the text "Leopold Silvers" is displayed (Tuesday appointment).
     expect(getByText("Leopold Silvers")).toBeInTheDocument();
   });
 
@@ -35,7 +41,6 @@ describe("Application", () => {
 
     // 2. Wait until the text "Archie Cohen" is displayed.
     await waitForElement(() => getByText(container, "Archie Cohen"));
-
     const appointments = getAllByTestId(container, "appointment");
     const appointment = appointments[0];
 
@@ -137,11 +142,10 @@ describe("Application", () => {
     axios.put.mockRejectedValueOnce();
 
     // 1. Render the Application.
-    const { container, debug } = render(<Application />);
+    const { container } = render(<Application />);
 
     // 2. Wait until the text "Archie Cohen" is displayed.
     await waitForElement(() => getByText(container, "Archie Cohen"));
-
     const appointments = getAllByTestId(container, "appointment");
     const appointment = appointments[0];
 
@@ -205,7 +209,6 @@ describe("Application", () => {
 
     // 9. Wait until the element with the text "Archie Cohen" is displayed.
     await waitForElement(() => getByText(appointment, "Archie Cohen"));
-
   });
 
 });
