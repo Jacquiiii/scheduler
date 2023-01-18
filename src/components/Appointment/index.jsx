@@ -53,56 +53,56 @@ const Appointment = (props) => {
   };
 
   return (
-    <article className="appointment">
+    <article className="appointment" data-testid="appointment">
       <Header time={ props.time }/>
-        {mode === EMPTY && <Empty onAdd={ () => transition(CREATE) } />}
-        {mode === SAVING && <Status message="Saving"/>}
-        {mode === DELETING && <Status message="Deleting"/>}
-        {mode === CONFIRM && (
-          <Confirm 
-            message="Are you sure you would like to delete?"
-            onCancel={ back }
-            onConfirm={ cancel }
-          />
-        )}
-        {mode === SHOW && (
-          <Show
-            student={ props.interview.student }
-            interviewer={ props.interview.interviewer.name }
-            onDelete={ () => transition(CONFIRM) }
-            onEdit={ () => transition(EDIT) }
-          />
-        )}
-        {mode === CREATE && (
-          <Form
-            student={ "" }
-            interviewer={ null }
-            interviewers={ props.interviewers }
-            onCancel={ back }
-            onSave={ save }
-          />
-        )}
-        {mode === EDIT && (
-          <Form
-            student={ props.interview.student }
-            interviewer={ props.interview.interviewer.id }
-            interviewers={ props.interviewers }
-            onCancel={ () => transition(SHOW) }
-            onSave={ save }
-          />
-        )}
-        {mode === ERROR_SAVE && (
-          <Error 
-            message="Could not confirm appointment"
-            onClose={ () => back() }
-          />
-        )}
-        {mode === ERROR_DELETE && (
-          <Error 
-            message="Could not cancel appointment"
-            onClose={ () => transition(SHOW) }
-          />
-        )}
+      {mode === EMPTY && <Empty onAdd={ () => transition(CREATE) } />}
+      {mode === SAVING && <Status message="Saving"/>}
+      {mode === DELETING && <Status message="Deleting"/>}
+      {mode === CONFIRM && (
+        <Confirm 
+          message="Are you sure you would like to delete?"
+          onCancel={ back }
+          onConfirm={ cancel }
+        />
+      )}
+      {mode === SHOW && (
+        <Show
+          student={ props.interview.student }
+          interviewer={ props.interview.interviewer.name }
+          onDelete={ () => transition(CONFIRM) }
+          onEdit={ () => transition(EDIT) }
+        />
+      )}
+      {mode === CREATE && (
+        <Form
+          student={ "" }
+          interviewer={ null }
+          interviewers={ props.interviewers }
+          onCancel={ back }
+          onSave={ save }
+        />
+      )}
+      {mode === EDIT && (
+        <Form
+          student={ props.interview.student }
+          interviewer={ props.interview.interviewer.id }
+          interviewers={ props.interviewers }
+          onCancel={ () => transition(SHOW) }
+          onSave={ save }
+        />
+      )}
+      {mode === ERROR_SAVE && (
+        <Error 
+          message="Could not confirm appointment"
+          onClose={ () => back() }
+        />
+      )}
+      {mode === ERROR_DELETE && (
+        <Error 
+          message="Could not cancel appointment"
+          onClose={ () => transition(SHOW) }
+        />
+      )}
     </article>
   );
   

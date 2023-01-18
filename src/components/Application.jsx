@@ -27,6 +27,7 @@ const Application = () => {
 
     return (
       <Appointment
+        hello="world"
         key={ appointment.id }
         { ...appointment }
         interview={ interview }
