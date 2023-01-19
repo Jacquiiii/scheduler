@@ -10,21 +10,12 @@ import Empty from "components/Appointment/Empty";
 import Form from "components/Appointment/Form";
 import Error from "components/Appointment/Error";
 
+import { EMPTY, SHOW, CREATE, SAVING, CONFIRM, DELETING, EDIT, ERROR_SAVE, ERROR_DELETE } from "helpers/constants";
+
 import "components/Appointment/styles.scss";
 
 // Displays appointment component based on current mode
 const Appointment = (props) => {
-
-  // Modes
-  const EMPTY = "EMPTY";
-  const SHOW = "SHOW";
-  const CREATE = "CREATE";
-  const SAVING = "SAVING";
-  const CONFIRM = "CONFIRM";
-  const DELETING = "DELETING";
-  const EDIT = "EDIT";
-  const ERROR_SAVE = "ERROR_SAVE";
-  const ERROR_DELETE = "ERROR_DELETE";
 
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
