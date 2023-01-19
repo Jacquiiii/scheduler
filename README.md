@@ -24,18 +24,24 @@ This app was built by Jacqui Koroll using Create React App boilerplate code from
 - Node 15.14.0
 - Axios
 - React
-- @testing-library/react-hooks
 - react-test-renderer
 - Babel
 - Storybook
 - Jest
 - @testing-library/jest-dom
+- @testing-library/react-hooks
 
 ## Screenshots
 
 !["Desktop View"](https://github.com/Jacquiiii/scheduler/blob/master/docs/DesktopView.png)
-!["Mobile View"](https://github.com/Jacquiiii/scheduler/blob/master/docs/MobileView.png)
+
 !["Create interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/CreateInterview.png)
+
 !["Booked interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/BookedInterview.png)
+
 !["Cancel interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/CancelInterview.png)
+
 !["Spots remaining each day"](https://github.com/Jacquiiii/scheduler/blob/master/docs/SpotsRemaining.png)
+
+!["Mobile View"](https://github.com/Jacquiiii/scheduler/blob/master/docs/MobileView.png)
+
