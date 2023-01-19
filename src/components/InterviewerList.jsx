@@ -12,17 +12,15 @@ const InterviewerList = (props) => {
     interviewers: PropTypes.array.isRequired
   };
 
-  const interviewerListItems = props.interviewers.map(interviewer => {
-    return (
-      <InterviewerListItem
-        key={ interviewer.id }
-        name={ interviewer.name }
-        avatar={ interviewer.avatar }
-        selected={ interviewer.id === props.value }
-        setInterviewer={ () => props.onChange(interviewer.id) }
-      />
-    );
-  });
+  const interviewerListItems = props.interviewers.map((interviewer) => (
+    <InterviewerListItem
+      key={ interviewer.id }
+      name={ interviewer.name }
+      avatar={ interviewer.avatar }
+      selected={ interviewer.id === props.value }
+      setInterviewer={ () => props.onChange(interviewer.id) }
+    />
+  ));
 
   return (
     <section className="interviewers">

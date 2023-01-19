@@ -21,7 +21,7 @@ const Application = () => {
 
   // Produces list of Appointment components to be displayed on the page
   const dailyAppointments = getAppointmentsForDay(state, state.day);
-  const appointmentList = dailyAppointments.map(appointment => {
+  const appointmentList = dailyAppointments.map((appointment) => {
 
     const interview = getInterview(state, appointment.interview);
     const interviewers = getInterviewersForDay(state, state.day);

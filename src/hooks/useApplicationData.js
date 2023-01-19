@@ -12,31 +12,29 @@ const useApplicationData = () => {
   });
 
   // Updates state with a new day
-  const setDay = day => setState({ ...state, day });
+  const setDay = (day) => setState({ ...state, day });
 
   // Gets days and appointments data from API and updates state with new days array and appointments object
   useEffect(() => {
-
     Promise.all([
       axios.get("/api/days"),
       axios.get("/api/appointments"),
       axios.get("/api/interviewers")
     ])
-      .then(all => {
-        setState(prev => ({
+      .then((all) => {
+        setState((prev) => ({
           ...prev,
           days: all[0].data,
           appointments: all[1].data,
           interviewers: all[2].data
         }));
       })
-      .catch(err => console.log(err));
-
+      .catch((err) => console.log(err));
   }, []);
 
   // Returns a new days array where spots are updated for a specific day
   const updateSpots = (state, appointments) => {
-    const currentDay = state.days.find(d => d.name === state.day);
+    const currentDay = state.days.find((d) => d.name === state.day);
   
     // Counts the null appointments
     let spots = 0;
@@ -47,7 +45,7 @@ const useApplicationData = () => {
   
     // Returns days array with updated day
     const updatedDay = {...currentDay, spots};
-    return state.days.map(d => d.name === state.day ? updatedDay : d);
+    return state.days.map((d) => d.name === state.day ? updatedDay : d);
   };
 
   // Changes local state when interview is booked and updates API
@@ -66,15 +64,15 @@ const useApplicationData = () => {
 
     return new Promise((resolve, reject) => {
       axios.put(`/api/appointments/${id}`, { interview })
-      .then(res => {
-        setState(prev => ({
+      .then((res) => {
+        setState((prev) => ({
           ...prev,
           days,
           appointments
         }));
         resolve(res);
       })
-      .catch(err => reject(err));
+      .catch((err) => reject(err));
     });
   };
 
@@ -96,15 +94,15 @@ const useApplicationData = () => {
 
     return new Promise((resolve, reject) => {
       axios.delete(`/api/appointments/${id}`, { interview })
-      .then(res => {
-        setState(prev => ({
+      .then((res) => {
+        setState((prev) => ({
           ...prev,
           days,
           appointments
         }));
         resolve(res);
       })
-      .catch(err => reject(err));
+      .catch((err) => reject(err));
     });
   };
 

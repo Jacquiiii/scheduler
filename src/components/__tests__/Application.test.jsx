@@ -1,13 +1,13 @@
 import React from "react";
 import axios from "axios";
 
-import { 
-  render, 
-  cleanup, 
-  waitForElement, 
-  fireEvent, 
-  getByText, 
-  getByAltText, 
+import {
+  render,
+  cleanup,
+  waitForElement,
+  fireEvent,
+  getByText,
+  getByAltText,
   getByPlaceholderText,
   getAllByTestId,
   queryByAltText,
@@ -95,7 +95,7 @@ describe("Application", () => {
     fireEvent.click(getByAltText(appointment, "Sylvia Palmer"));
     fireEvent.click(getByText(appointment, "Save"));
     expect(getByText(appointment, "Saving")).toBeInTheDocument();
-  
+
     await waitForElement(() => getByText(appointment, "Could not confirm changes"));
 
     fireEvent.click(getByAltText(appointment, "Close"));
