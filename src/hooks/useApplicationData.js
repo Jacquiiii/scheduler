@@ -53,7 +53,6 @@ const useApplicationData = () => {
 
   // Changes local state when interview is booked and updates API
   const bookInterview = (id, interview) => {
-
     const appointment = {
       ...state.appointments[id],
       interview: { ...interview }
@@ -110,7 +109,13 @@ const useApplicationData = () => {
     });
   };
 
-  return { state, setDay, bookInterview, cancelInterview };
+  return { 
+    state, 
+    setDay, 
+    bookInterview, 
+    cancelInterview 
+  };
+  
 };
 
 export default useApplicationData;

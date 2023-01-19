@@ -15,6 +15,7 @@ import "components/Appointment/styles.scss";
 // Displays appointment component based on current mode
 const Appointment = (props) => {
 
+  // Modes
   const EMPTY = "EMPTY";
   const SHOW = "SHOW";
   const CREATE = "CREATE";
@@ -29,7 +30,7 @@ const Appointment = (props) => {
     props.interview ? SHOW : EMPTY
   );
 
-  // Transitions to show mode after user enters name/selects interviewer and clicks save
+  // Transitions to show mode after user enters name, selects interviewer and clicks save. If error, transitions to error mode.
   const save = (name, interviewer) => {
     const interview = {
       student: name,
@@ -40,10 +41,10 @@ const Appointment = (props) => {
   
     props.bookInterview(props.id, interview)
       .then(() => transition(SHOW))
-      .catch(error => transition(ERROR_SAVE, true));
+      .catch(() => transition(ERROR_SAVE, true));
   };
 
-  // Transitions to empty mode after user clicks and confirms cancel
+  // Transitions to empty mode after user clicks and confirms cancel. If error, transitions to error mode.
   const cancel = () => {
     transition(DELETING, true);
   
@@ -87,20 +88,20 @@ const Appointment = (props) => {
           student={ props.interview.student }
           interviewer={ props.interview.interviewer.id }
           interviewers={ props.interviewers }
-          onCancel={ () => transition(SHOW) }
+          onCancel={ back }
           onSave={ save }
         />
       )}
       {mode === ERROR_SAVE && (
         <Error 
           message="Could not confirm changes"
-          onClose={ () => back() }
+          onClose={ back }
         />
       )}
       {mode === ERROR_DELETE && (
         <Error 
           message="Could not cancel appointment"
-          onClose={ () => back() }
+          onClose={ back }
         />
       )}
     </article>

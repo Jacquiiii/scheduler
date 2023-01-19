@@ -1,8 +1,9 @@
-// Returns appropriate string based on value of spots. Used in DayListItem component.
+// Returns appropriate string based on value of spots remaining. Used in DayListItem component.
 const spots = (spots) => {
   if (spots === 0) {
     return "no spots remaining"
   }
+
   if (spots === 1) {
     return "1 spot remaining"
   }
@@ -10,4 +11,4 @@ const spots = (spots) => {
   return `${spots} spots remaining`;
 };
 
-export { spots };
+export default spots;

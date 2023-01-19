@@ -13,7 +13,7 @@ const useFormData = (props) => {
     setInterviewer(null);
   };
 
-  // Uses reset to reset form fields and submits cancel
+  // Uses reset to update form fields and submits cancel
   const cancel = () => {
     reset();
     props.onCancel();
@@ -35,7 +35,16 @@ const useFormData = (props) => {
     props.onSave(student, interviewer);
   };
 
-  return { error, cancel, validate, student, interviewer, setInterviewer, setStudent };
+  return { 
+    error, 
+    cancel, 
+    validate, 
+    student, 
+    interviewer, 
+    setInterviewer, 
+    setStudent 
+  };
+  
 };
 
 export default useFormData;

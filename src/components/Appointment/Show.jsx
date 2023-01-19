@@ -1,6 +1,6 @@
 import React from "react";
 
-// Displayed when appointment exists and allows user to see existing appointment
+// Displayed when appointment exists and allows user to see existing appointment details along with edit and delete buttons
 const Show = (props) => {
   return (
     <main className="appointment__card appointment__card--show">

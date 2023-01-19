@@ -30,7 +30,7 @@ const InterviewerList = (props) => {
       <ul className="interviewers__list">{ interviewerListItems }</ul>
     </section>
   );
-
+  
 };
 
 export default InterviewerList;

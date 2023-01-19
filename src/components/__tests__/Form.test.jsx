@@ -6,6 +6,7 @@ import Form from "components/Appointment/Form";
 afterEach(cleanup);
 
 describe("Form", () => {
+
   const interviewers = [
     {
       id: 1,
@@ -92,4 +93,5 @@ describe("Form", () => {
     expect(getByPlaceholderText("Enter Student Name")).toHaveValue("");
     expect(onCancel).toHaveBeenCalledTimes(1);
   });
+
 });

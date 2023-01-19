@@ -24,7 +24,7 @@ const useVisualMode = (initial) => {
   const mode = history[history.length - 1];
 
   return { mode, transition, back };
-  
+
 };
 
 export default useVisualMode;
