@@ -1,6 +1,6 @@
 # Interview Scheduler
 
-Interview scheduler is a single page app built with React that allows users to book, edit and delete interview appointments. Booking can be done Monday through Friday and users are able to select their timeslot and interviewer.
+Interview scheduler is a single page app built with React that allows users to book, edit and cancel interview appointments. Booking can be done Monday through Friday and users are able to select their timeslot and interviewer.
 
 This app was built by Jacqui Koroll using Create React App boilerplate code from [this respository](https://github.com/lighthouse-labs/scheduler/)
 
@@ -31,3 +31,11 @@ This app was built by Jacqui Koroll using Create React App boilerplate code from
 - Jest
 - @testing-library/jest-dom
 
+## Screenshots
+
+!["Desktop View"](https://github.com/Jacquiiii/scheduler/blob/master/docs/DesktopView.png)
+!["Mobile View"](https://github.com/Jacquiiii/scheduler/blob/master/docs/MobileView.png)
+!["Create interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/CreateInterview.png)
+!["Booked interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/BookedInterview.png)
+!["Cancel interview"](https://github.com/Jacquiiii/scheduler/blob/master/docs/CancelInterview.png)
+!["Spots remaining each day"](https://github.com/Jacquiiii/scheduler/blob/master/docs/SpotsRemaining.png)
