@@ -12,5 +12,4 @@ const Empty = (props) => (
   </main>
 );
 
-
 export default Empty;

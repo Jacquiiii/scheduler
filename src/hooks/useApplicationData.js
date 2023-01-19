@@ -36,7 +36,6 @@ const useApplicationData = () => {
 
   // Returns a new days array where spots are updated for a specific day
   const updateSpots = (state, appointments) => {
-    // Finds the day
     const currentDay = state.days.find(d => d.name === state.day);
   
     // Counts the null appointments
